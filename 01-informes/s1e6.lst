@@ -1,0 +1,92 @@
+old   1: select d.ISBN, l.Titulo FROM dispone d, libro l where d.isbn=l.isbn AND d.cod_suc=&1 ORDER BY 1
+new   1: select d.ISBN, l.Titulo FROM dispone d, libro l where d.isbn=l.isbn AND d.cod_suc=2 ORDER BY 1
+
+Wed Feb 14                                                                                                                                   page    1
+                                                     Libros en una sucursal 2 ordenados por ISBN
+
+ISBN       TITULO                                                                                                                                     
+---------- ------------------------------------------------------------                                                                               
+5023084    AFRICANUS. EL HIJO DEL CONSUL                                                                                                              
+5023132    ANA KARENINA                                                                                                                               
+5023156    APOSTILLAS A EL NOMBRE DE LA ROSA                                                                                                          
+5023180    ASI HABLO ZARATUSTRA                                                                                                                       
+5023204    BODAS DE SANGRE                                                                                                                            
+5023216    CANDIDO O EL OPTIMISMO                                                                                                                     
+5023276    COMO AGUA PARA CHOCOLATE                                                                                                                   
+5023288    CRITON                                                                                                                                     
+5023336    CUENTOS PARA PENSAR                                                                                                                        
+5023372    DEL AMOR Y OTROS DEMONIOS                                                                                                                  
+5023396    DIAS Y NOCHE DE AMOR Y DE GUERRA                                                                                                           
+5023432    DON QUIJOTE DE LA MANCHA                                                                                                                   
+5023468    EL AMANTE                                                                                                                                  
+5023492    EL ANGEL PERDIDO                                                                                                                           
+5023516    EL ARTE DE AMAR                                                                                                                            
+5023564    EL CEMENTERIO DE PRAGA                                                                                                                     
+5023588    EL CONVIVIO                                                                                                                                
+5023612    EL CORONEL NO TIENE QUIEN LE ESCRIBA                                                                                                       
+5023636    EL DECAMERON                                                                                                                               
+5023720    EL FANTASMA DE CANTERVILLE                                                                                                                 
+5023732    EL FUEGO DE CADA DIA                                                                                                                       
+5023768    EL HOMBRE ACECHA                                                                                                                           
+5023864    EL LIBRO DE LOS ABRAZOS                                                                                                                    
+5023876    EL LOBO ESTEPARIO                                                                                                                          
+5023996    EL PLAN INFINITO                                                                                                                           
+5024044    EL PRINCIPE DESTRONADO                                                                                                                     
+5024056    EL PRINCIPITO                                                                                                                              
+5024068    EL PROCESO DE LA CIENCIA                                                                                                                   
+5024080    EL PROFETA                                                                                                                                 
+5024128    EL SILMARILLON                                                                                                                             
+5024164    EL SUENO DE UNA NOCHE DE VERANO                                                                                                            
+5024176    EL SUENO DEL CELTA                                                                                                                         
+5024188    EL SUR                                                                                                                                     
+5024224    EL TIRO DE GRACIA                                                                                                                          
+5024272    EL VIEJO Y EL MAR                                                                                                                          
+5024344    ESTE ES MI PUEBLO                                                                                                                          
+5024380    FAHRENHEIT 451                                                                                                                             
+5024452    HAMLET                                                                                                                                     
+5024476    HISTORIAS DE CRONOPIOS Y DE FAMAS                                                                                                          
+5024500    JUAN SALVADOR GAVIOTA                                                                                                                      
+5024524    LA CABEZA DE GOLIAT                                                                                                                        
+5024572    LA CAVERNA                                                                                                                                 
+5024584    LA CELESTINA                                                                                                                               
+5024596    LA CHICA QUE SONABA CON UNA CERILLA Y UN BIDON DE GASOLINA                                                                                 
+5024608    LA CIENCIA, SU METODO Y SU FILOSOFIA                                                                                                       
+5024620    LA CIUDAD DE LAS BESTIAS                                                                                                                   
+5024632    LA COMUNIDAD DEL ANILLO                                                                                                                    
+5024656    LA CONSPIRACION                                                                                                                            
+5024692    LA DOCTORA COLE                                                                                                                            
+5024716    LA ENEIDA                                                                                                                                  
+5024740    LA FORTALEZA DIGITAL                                                                                                                       
+5024764    LA GUERRA DE LA CERVEZA                                                                                                                    
+5024800    LA ISLA DEL DIA ANTES                                                                                                                      
+5024860    LA MURALLA CHINA Y OTROS CUENTOS                                                                                                           
+5024872    LA ODISEA                                                                                                                                  
+5024884    LA OTRA MUJER                                                                                                                              
+5024920    LA PESTE                                                                                                                                   
+5024944    LA REINA EN EL PALACIO DE LAS CORRIENTES DE AIRE                                                                                           
+5024956    LA RESISTENCIA                                                                                                                             
+5025052    LAS AVENTURAS DE TOM BOMBADIL                                                                                                              
+5025112    LAS NIEVES DEL KILIMANJARO                                                                                                                 
+5025148    LEYENDAS                                                                                                                                   
+5025172    LO QUE SE DE LOS HOMBRECILLOS                                                                                                              
+5025208    LOS ESCRITORES IRREVERENTES                                                                                                                
+5025256    LOS VERSOS SATANICOS                                                                                                                       
+5025268    MANUAL DE PERDEDORES                                                                                                                       
+5025280    MAPA DE LA TIERRA MEDIA                                                                                                                    
+5025292    MAS PLATON MENOS PROZAC                                                                                                                    
+5025352    PALE DEMON                                                                                                                                 
+5025400    PEDRO PARAMO                                                                                                                               
+5025412    POEMAS                                                                                                                                     
+5025448    POEMAS DE LA OFICINA                                                                                                                       
+5025460    POEMAS SOCIALES DE GUERRA Y MUERTE                                                                                                         
+5025580    RECUERDOS DE LA GUERRA CIVIL                                                                                                               
+5025604    RETRATO EN SEPIA                                                                                                                           
+5025652    SAN MIGUEL BUENO, MARTIR                                                                                                                   
+5025664    SEIS PERSONAJES EN BUSCA DE AUTOR                                                                                                          
+5025688    SIDDAHARTA                                                                                                                                 
+5025724    THE HELP                                                                                                                                   
+5025784    UTOPIA                                                                                                                                     
+5025808    YO ACUSO                                                                                                                                   
+
+81 rows selected.
+

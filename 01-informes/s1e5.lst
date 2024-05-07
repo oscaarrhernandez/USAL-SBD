@@ -1,0 +1,245 @@
+
+Wed Feb 14                                                                                                                                   page    1
+                                                                  Sesion1Ejercicio5
+                                                   Libros en Suc1,2,3 ordenados por ISBN y sucursal
+
+ISBN       TITULO                                                          COD_SUC ANO_EDICION COD_EDITORIAL                                          
+---------- ------------------------------------------------------------ ---------- ----------- -------------                                          
+5023024    1984                                                                  1        2004             3                                          
+5023036    A SANGRE FRIA                                                         3        1998             6                                          
+5023048    ABRAZA LA OSCURIDAD                                                   3        1977             5                                          
+5023084    AFRICANUS. EL HIJO DEL CONSUL                                         2        1985             5                                          
+5023084    AFRICANUS. EL HIJO DEL CONSUL                                         3        1985             5                                          
+5023096    AGUJEROS NEGROS Y PEQUENOS UNIVERSOS                                  3        1993             9                                          
+5023120    AMORES ADULTEROS                                                      3        2009             2                                          
+5023132    ANA KARENINA                                                          1        2005             3                                          
+5023132    ANA KARENINA                                                          2        2005             3                                          
+5023144    ANGELES Y DEMONIOS                                                    3        1989             5                                          
+5023156    APOSTILLAS A EL NOMBRE DE LA ROSA                                     2        1973             4                                          
+5023168    ARTE DE LAS PUTAS                                                     1        1999             8                                          
+5023168    ARTE DE LAS PUTAS                                                     3        1999             8                                          
+5023180    ASI HABLO ZARATUSTRA                                                  1        1981             7                                          
+5023180    ASI HABLO ZARATUSTRA                                                  2        1981             7                                          
+5023192    BILBAO,BILBO,BILBAO CUENTOS Y CRONICAS                                1        1981             7                                          
+5023204    BODAS DE SANGRE                                                       2        1978             8                                          
+5023216    CANDIDO O EL OPTIMISMO                                                1        1990             8                                          
+5023216    CANDIDO O EL OPTIMISMO                                                2        1990             8                                          
+5023228    CAROLINA SE ENAMORA                                                   3        2007             5                                          
+5023240    CLARA LA LOCA                                                         1        1964            10                                          
+5023264    COME, REZA, AMA                                                       1        1990             2                                          
+5023264    COME, REZA, AMA                                                       3        1990             2                                          
+5023276    COMO AGUA PARA CHOCOLATE                                              1        2001             1                                          
+5023276    COMO AGUA PARA CHOCOLATE                                              2        2001             1                                          
+5023276    COMO AGUA PARA CHOCOLATE                                              3        2001             1                                          
+5023288    CRITON                                                                2        1974             9                                          
+5023300    CRONICA DE UN MAL AMIGO                                               1        1975             9                                          
+5023300    CRONICA DE UN MAL AMIGO                                               3        1975             9                                          
+5023312    CUENTOS COMPLETOS                                                     3        1963             2                                          
+5023336    CUENTOS PARA PENSAR                                                   2        2008             8                                          
+5023348    DE LAS MUJERES ILUSTRES EN ROMANCE                                    1        2010             7                                          
+5023372    DEL AMOR Y OTROS DEMONIOS                                             2        2009             9                                          
+5023384    DEMIAN                                                                1        1982             1                                          
+5023396    DIAS Y NOCHE DE AMOR Y DE GUERRA                                      2        1969            10                                          
+5023408    DIME QUIEN SOY                                                        3        2009             3                                          
+5023420    DON JUAN TENORIO                                                      1        1994             6                                          
+5023420    DON JUAN TENORIO                                                      3        1994             6                                          
+5023432    DON QUIJOTE DE LA MANCHA                                              1        1977             3                                          
+5023432    DON QUIJOTE DE LA MANCHA                                              2        1977             3                                          
+5023444    ECCE HOMO                                                             3        1968             5                                          
+5023456    EDIPO REY                                                             1        1998             1                                          
+5023468    EL AMANTE                                                             2        1967             6                                          
+5023468    EL AMANTE                                                             3        1967             6                                          
+5023492    EL ANGEL PERDIDO                                                      2        1974             8                                          
+5023492    EL ANGEL PERDIDO                                                      3        1974             8                                          
+5023504    EL ANTICRISTO                                                         1        1986             7                                          
+5023504    EL ANTICRISTO                                                         3        1986             7                                          
+5023516    EL ARTE DE AMAR                                                       2        1981             4                                          
+5023540    EL CAMINO                                                             3        1963             7                                          
+5023564    EL CEMENTERIO DE PRAGA                                                2        2005             6                                          
+5023576    EL CODIGO DA VINCI                                                    1        1964             4                                          
+5023576    EL CODIGO DA VINCI                                                    3        1964             4                                          
+5023588    EL CONVIVIO                                                           1        2001            10                                          
+5023588    EL CONVIVIO                                                           2        2001            10                                          
+5023600    EL CORAZON DE LAS TINIEBLAS                                           3        1997             2                                          
+5023612    EL CORONEL NO TIENE QUIEN LE ESCRIBA                                  2        1975             9                                          
+5023636    EL DECAMERON                                                          1        2002             5                                          
+5023636    EL DECAMERON                                                          2        2002             5                                          
+5023660    EL DIARIO DE ANA FRANK                                                1        1981             3                                          
+5023708    EL EXTRANJERO                                                         1        1994            10                                          
+5023720    EL FANTASMA DE CANTERVILLE                                            2        1973             7                                          
+5023732    EL FUEGO DE CADA DIA                                                  2        1977             4                                          
+5023768    EL HOMBRE ACECHA                                                      2        1980             3                                          
+5023768    EL HOMBRE ACECHA                                                      3        1980             3                                          
+5023780    EL HOMBRE BICENTENARIO                                                3        2011             7                                          
+5023816    EL INFIERNO TAN TEMIDO                                                1        2006             5                                          
+5023840    EL JARDIN DE LOS CEREZOS                                              3        2005             8                                          
+5023864    EL LIBRO DE LOS ABRAZOS                                               2        1998             4                                          
+5023864    EL LIBRO DE LOS ABRAZOS                                               3        1998             4                                          
+5023876    EL LOBO ESTEPARIO                                                     2        1998             4                                          
+5023900    EL MUSICO ALBERTO                                                     3        1987             5                                          
+5023936    EL OJO DEL PODER                                                      1        2000             4                                          
+5023948    EL ORIGEN DE LAS ESPECIES                                             3        2007             7                                          
+5023960    EL OTONO DEL PATRIARCA                                                1        2010             3                                          
+5023984    EL PERFUME                                                            3        1992             7                                          
+5023996    EL PLAN INFINITO                                                      2        2007             2                                          
+5024020    EL PORVENIR DE UNA ILUSION                                            1        1995             7                                          
+5024032    EL PRINCIPE                                                           1        1960             7                                          
+5024044    EL PRINCIPE DESTRONADO                                                2        1991             8                                          
+5024044    EL PRINCIPE DESTRONADO                                                3        1991             8                                          
+5024056    EL PRINCIPITO                                                         2        1997             1                                          
+5024068    EL PROCESO DE LA CIENCIA                                              2        1988             6                                          
+5024080    EL PROFETA                                                            2        1970             7                                          
+5024092    EL RETORNO DEL REY                                                    1        2006             1                                          
+5024104    EL REY LEAR                                                           3        1981             5                                          
+5024128    EL SILMARILLON                                                        2        1978             2                                          
+5024128    EL SILMARILLON                                                        3        1978             2                                          
+5024140    EL SINLECIO DE LAS SIRENAS                                            3        1968             9                                          
+5024164    EL SUENO DE UNA NOCHE DE VERANO                                       2        1976             5                                          
+5024176    EL SUENO DEL CELTA                                                    2        1968             4                                          
+5024188    EL SUR                                                                2        1982             8                                          
+5024188    EL SUR                                                                3        1982             8                                          
+
+Wed Feb 14                                                                                                                                   page    2
+                                                                  Sesion1Ejercicio5
+                                                   Libros en Suc1,2,3 ordenados por ISBN y sucursal
+
+ISBN       TITULO                                                          COD_SUC ANO_EDICION COD_EDITORIAL                                          
+---------- ------------------------------------------------------------ ---------- ----------- -------------                                          
+5024200    EL TIEMPO ENTRE COSTURAS                                              1        1992             1                                          
+5024224    EL TIRO DE GRACIA                                                     1        1985             9                                          
+5024224    EL TIRO DE GRACIA                                                     2        1985             9                                          
+5024248    EL ULTIMO JUDIO                                                       1        2009             9                                          
+5024272    EL VIEJO Y EL MAR                                                     2        1996             1                                          
+5024284    EL VUELO DE LA REINA                                                  1        1989             7                                          
+5024296    ELOGIO A LA LOCURA                                                    1        1977            10                                          
+5024308    EN LA CIUDAD DE ORO Y PLATA                                           3        2002             1                                          
+5024320    ENTRE DOS AGUAS                                                       3        1966             1                                          
+5024332    ENTRE MENTIRA E IRONIA                                                1        1988             1                                          
+5024344    ESTE ES MI PUEBLO                                                     1        1996             8                                          
+5024344    ESTE ES MI PUEBLO                                                     2        1996             8                                          
+5024356    ESTUPIDOS HOMBRES BLANCOS                                             3        1960             1                                          
+5024368    ETICA A NICOMACO                                                      1        1964             4                                          
+5024380    FAHRENHEIT 451                                                        2        1971            10                                          
+5024380    FAHRENHEIT 451                                                        3        1971            10                                          
+5024392    FUNDACION E IMPERIO                                                   1        1970             4                                          
+5024452    HAMLET                                                                1        1970             2                                          
+5024452    HAMLET                                                                2        1970             2                                          
+5024476    HISTORIAS DE CRONOPIOS Y DE FAMAS                                     2        1982            10                                          
+5024500    JUAN SALVADOR GAVIOTA                                                 2        1982             6                                          
+5024512    LA ALARGADA SOBRA DEL AMOR                                            1        1991             6                                          
+5024512    LA ALARGADA SOBRA DEL AMOR                                            3        1991             6                                          
+5024524    LA CABEZA DE GOLIAT                                                   2        1983             6                                          
+5024524    LA CABEZA DE GOLIAT                                                   3        1983             6                                          
+5024548    LA CASA DE BERNARDA ALBA                                              1        1988             3                                          
+5024548    LA CASA DE BERNARDA ALBA                                              3        1988             3                                          
+5024560    LA CASA DE LOS ESPIRITUS                                              1        1969             3                                          
+5024560    LA CASA DE LOS ESPIRITUS                                              3        1969             3                                          
+5024572    LA CAVERNA                                                            2        1963             3                                          
+5024584    LA CELESTINA                                                          2        1988             9                                          
+5024596    LA CHICA QUE SONABA CON UNA CERILLA Y UN BIDON DE GASOLINA            1        2009             4                                          
+5024596    LA CHICA QUE SONABA CON UNA CERILLA Y UN BIDON DE GASOLINA            2        2009             4                                          
+5024608    LA CIENCIA, SU METODO Y SU FILOSOFIA                                  2        1973             4                                          
+5024620    LA CIUDAD DE LAS BESTIAS                                              2        1981             3                                          
+5024620    LA CIUDAD DE LAS BESTIAS                                              3        1981             3                                          
+5024632    LA COMUNIDAD DEL ANILLO                                               2        1995             6                                          
+5024656    LA CONSPIRACION                                                       1        1986             8                                          
+5024656    LA CONSPIRACION                                                       2        1986             8                                          
+5024656    LA CONSPIRACION                                                       3        1986             8                                          
+5024668    LA CRISIS DE LA FILOSOFIA BURGUESA                                    1        2003            10                                          
+5024680    LA DIVINA COMEDIA                                                     1        2003             8                                          
+5024692    LA DOCTORA COLE                                                       2        1977             3                                          
+5024692    LA DOCTORA COLE                                                       3        1977             3                                          
+5024704    LA ELEGANCIA DEL ERIZO                                                1        1978             8                                          
+5024704    LA ELEGANCIA DEL ERIZO                                                3        1978             8                                          
+5024716    LA ENEIDA                                                             2        1972             7                                          
+5024740    LA FORTALEZA DIGITAL                                                  1        1970             6                                          
+5024740    LA FORTALEZA DIGITAL                                                  2        1970             6                                          
+5024764    LA GUERRA DE LA CERVEZA                                               2        1992             2                                          
+5024800    LA ISLA DEL DIA ANTES                                                 2        1984             1                                          
+5024812    LA ISLA DESCONOCIDA                                                   3        2000             6                                          
+5024836    LA MUERTE DE IVAN ILLICH                                              1        1964             5                                          
+5024860    LA MURALLA CHINA Y OTROS CUENTOS                                      2        1978             7                                          
+5024872    LA ODISEA                                                             1        1971             4                                          
+5024872    LA ODISEA                                                             2        1971             4                                          
+5024872    LA ODISEA                                                             3        1971             4                                          
+5024884    LA OTRA MUJER                                                         2        2007             1                                          
+5024908    LA PERLA                                                              1        1995             3                                          
+5024920    LA PESTE                                                              2        1966             2                                          
+5024944    LA REINA EN EL PALACIO DE LAS CORRIENTES DE AIRE                      2        1999             5                                          
+5024956    LA RESISTENCIA                                                        2        1969            10                                          
+5024980    LA SONRISA ETRUSCA                                                    1        1979             5                                          
+5025004    LA TREGUA                                                             1        1981             2                                          
+5025016    LA VIDA NUEVA                                                         1        2002             8                                          
+5025016    LA VIDA NUEVA                                                         3        2002             8                                          
+5025028    LA ZAPATERA PRODIGIOSA                                                1        1983             3                                          
+5025052    LAS AVENTURAS DE TOM BOMBADIL                                         1        1963             9                                          
+5025052    LAS AVENTURAS DE TOM BOMBADIL                                         2        1963             9                                          
+5025064    LAS COSMICOMICAS                                                      3        1984             1                                          
+5025076    LAS DOS TORRES                                                        3        1981             2                                          
+5025100    LAS LIBRETAS DE JOSE                                                  1        1997             3                                          
+5025112    LAS NIEVES DEL KILIMANJARO                                            2        1987             3                                          
+5025124    LAS PONTICAS                                                          1        1985            10                                          
+5025148    LEYENDAS                                                              1        1963             5                                          
+5025148    LEYENDAS                                                              2        1963             5                                          
+5025172    LO QUE SE DE LOS HOMBRECILLOS                                         2        1960             9                                          
+5025184    LOS ASESINOS DEL EMPERADOR                                            1        2008             5                                          
+5025208    LOS ESCRITORES IRREVERENTES                                           2        1966             2                                          
+5025232    LOS PADECIENTES                                                       1        2006             6                                          
+5025244    LOS PILARES DE LA TIERRA                                              1        1973             6                                          
+5025244    LOS PILARES DE LA TIERRA                                              3        1973             6                                          
+5025256    LOS VERSOS SATANICOS                                                  2        1985             6                                          
+5025268    MANUAL DE PERDEDORES                                                  1        2007             1                                          
+5025268    MANUAL DE PERDEDORES                                                  2        2007             1                                          
+5025280    MAPA DE LA TIERRA MEDIA                                               2        1985             2                                          
+5025292    MAS PLATON MENOS PROZAC                                               2        1965             3                                          
+5025304    MEMORIAS DE ADRIANO                                                   3        1965             5                                          
+5025328    MIL SOLES ESPLENDIDOS                                                 3        1976             2                                          
+5025340    MONSTER HIGH                                                          1        1987             6                                          
+5025352    PALE DEMON                                                            2        1961             8                                          
+5025352    PALE DEMON                                                            3        1961             8                                          
+5025364    PANDORA                                                               3        1960             7                                          
+
+Wed Feb 14                                                                                                                                   page    3
+                                                                  Sesion1Ejercicio5
+                                                   Libros en Suc1,2,3 ordenados por ISBN y sucursal
+
+ISBN       TITULO                                                          COD_SUC ANO_EDICION COD_EDITORIAL                                          
+---------- ------------------------------------------------------------ ---------- ----------- -------------                                          
+5025400    PEDRO PARAMO                                                          1        2007             5                                          
+5025400    PEDRO PARAMO                                                          2        2007             5                                          
+5025400    PEDRO PARAMO                                                          3        2007             5                                          
+5025412    POEMAS                                                                2        1975             7                                          
+5025436    POEMAS DE AMOR                                                        3        1960            10                                          
+5025448    POEMAS DE LA OFICINA                                                  2        2005             8                                          
+5025448    POEMAS DE LA OFICINA                                                  3        2005             8                                          
+5025460    POEMAS SOCIALES DE GUERRA Y MUERTE                                    2        1987             1                                          
+5025460    POEMAS SOCIALES DE GUERRA Y MUERTE                                    3        1987             1                                          
+5025484    POESIA COMPLETA                                                       3        1983            10                                          
+5025496    POESIA COMPLETA                                                       1        2002             2                                          
+5025556    PROHIBIDO PENSAR                                                      1        1986             2                                          
+5025568    PROVERBIOS DEL INFIERNO                                               1        1975             3                                          
+5025580    RECUERDOS DE LA GUERRA CIVIL                                          2        2011             6                                          
+5025580    RECUERDOS DE LA GUERRA CIVIL                                          3        2011             6                                          
+5025592    RESURECCION                                                           1        1970            10                                          
+5025592    RESURECCION                                                           3        1970            10                                          
+5025604    RETRATO EN SEPIA                                                      2        1964             3                                          
+5025604    RETRATO EN SEPIA                                                      3        1964             3                                          
+5025616    RINCONCETE Y CORTADILLO                                               1        1964            10                                          
+5025628    RINA DE GATOS: MADRID 1936                                            3        2001             7                                          
+5025652    SAN MIGUEL BUENO, MARTIR                                              1        1963             7                                          
+5025652    SAN MIGUEL BUENO, MARTIR                                              2        1963             7                                          
+5025664    SEIS PERSONAJES EN BUSCA DE AUTOR                                     2        2003             4                                          
+5025664    SEIS PERSONAJES EN BUSCA DE AUTOR                                     3        2003             4                                          
+5025676    SELECCION DE VERSOS BURLESCOS                                         1        1992             9                                          
+5025688    SIDDAHARTA                                                            2        1992             4                                          
+5025724    THE HELP                                                              2        1994             3                                          
+5025736    TIO VAINA                                                             1        1971             3                                          
+5025772    UNA TEMPORADA EN EL INFIERNO                                          1        2000             8                                          
+5025784    UTOPIA                                                                2        1961             2                                          
+5025784    UTOPIA                                                                3        1961             2                                          
+5025796    VIENTOS DEL PUEBLO                                                    1        1963            10                                          
+5025808    YO ACUSO                                                              1        1965             1                                          
+5025808    YO ACUSO                                                              2        1965             1                                          
+
+221 rows selected.
+

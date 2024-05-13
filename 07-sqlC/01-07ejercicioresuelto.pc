@@ -1,0 +1,26 @@
+/*Obtener el número de préstamos no finalizados contabilizados para una sucursal a partir del código de la sucursal.*/
+
+#include <stdio.h>
+#include <sqlca.h>
+
+int main(){
+	exec sql begin declare section;
+		char oracleid[]="/";
+		int numprestamos;
+		int codigo;
+	exec sql end declare section;
+	
+	printf("Codigo de la sucursal: ");
+	scanf("%d",&codigo);
+
+	exec sql connect :oracleid;
+
+	exec sql select count(*) into :numprestamos from prestamo where cod_suc=:codigo and fecha_dev is NULL;
+
+	if(sqlca.sqlcode == 0){
+		printf("Numero de prestamos no devueltos %d en la sucursal %d\n",numprestamos,codigo);
+	}
+
+	exec sql work commit release;
+	return 0;
+}

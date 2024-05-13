@@ -1,0 +1,27 @@
+/* 2. Obtener el número de autores pertenecientes a una nacionalidad a partir del código de nacionalidad introducido por el usuario. */
+
+#include <stdio.h>
+#include <sqlca.h>
+
+int main(){
+	exec sql begin declare section;
+		int num;
+		int cod;
+		char oracleid[]="/";
+	exec sql end declare section;
+
+	printf("Introduce el codigo de nacionalida: ");
+	scanf("%d",&cod);
+
+	exec sql connect :oracleid;
+
+	exec sql select count(*) into :num from AUTOR where COD_NACION= :cod;
+	
+	if (sqlca.sqlcode == 0){
+		printf("El numero de autores de la nacionalidad %d es %d\n",cod, num);
+	}else{
+		printf("No hay autores con el codigo nacion = %d\n",cod);
+	}
+	exec sql commit work release;
+	return 0;
+}

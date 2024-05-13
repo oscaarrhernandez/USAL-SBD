@@ -1,0 +1,28 @@
+/*Obtener la localidad en la que está ubicada una sucursal a partir del código que es introducido por el usuario*/
+
+#include <stdio.h>
+#include <sqlca.h>
+
+int main(){
+	exec sql begin declare section;
+		int cod;
+		char localidad[20];
+		char oracleid[]="/";
+	exec sql end declare section;
+
+	printf("Introduce el codigo de la sucursal: ");
+	scanf("%d",&cod);
+
+	exec sql connect :oracleid;
+
+	exec sql select poblacion into :localidad from sucursal where codigo = :cod;
+
+	if(sqlca.sqlcode == 0){
+		printf("La localidad de la sucursal numero %d es %s\n",cod,localidad);
+	}else{
+		printf("El codigo %d no está asociado a ninguna sucursal\n",cod);
+	}
+	
+	exec sql commit work release;
+	return 0;
+}

@@ -1,0 +1,37 @@
+/*Codificar un programa que utilizando SQL inmerso en C permita modificar la dirección, población y provincia de un lector. El programa, inicialmente, debe pedir al usuario el código del lector. Si dicho lector no existe mostrará un mensaje de error indicando que no existe y por tanto no se puede modificar; en caso contrario pedirá al usuario los nuevos valores para los atributos dirección, población y provincia y actualizará dichos datos para el lector especificado. Si el usuario no proporciona valor para alguno de los atributos, estos deben actualizarse con valor nulo. */
+
+#include <stdio.h>
+#include <sqlca.h>
+
+int main(){
+	exec sql begin declare section;
+	char direccion[30];
+	char poblacion[30];
+	char provincia[30];
+	int cod;
+	char oracleid[]="/";
+	exec sql end declare section;
+
+	printf("Codigo: ");
+	scanf("%d",&cod);
+
+	exec sql connect :oracleid;
+
+	exec sql select codigo into :cod from lector where codigo=:cod;
+
+	if(sql.sqlcode==0){
+		printf("Direccion: ");
+		scanf("%s",direccion);
+		printf("Poblacion: ");
+		scanf("%s",poblacion);
+		printf("Provincia: ");
+		scanf("%s",provincia);
+		
+		exec sql update lector set direccion=:direccion,poblacion=:poblacion,provincia=:provincia where codigo=:cod;
+	}else{
+		printf("No existe lector con el codigo %d",cod);
+	}
+
+	exec sql commit work release;
+	return 0;
+}

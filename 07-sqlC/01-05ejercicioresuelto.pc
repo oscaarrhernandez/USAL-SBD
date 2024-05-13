@@ -1,0 +1,46 @@
+/*Obtener toda la información de un autor a partir del código de éste, introducido por el usuario.*/
+
+#include <stdio.h>
+#include <sqlca.h>
+
+int main(){
+	exec sql begin declare section;
+		struct autor_{
+			int codigo,
+			char nombre[10],
+			char apellido[20],
+			int ano_nac,
+			int ano_fall,
+			int cod_nacion
+		};
+		int cod;
+		char oracleid[]="/";
+	exec sql end declare section;
+
+	printf("Introducir codigo autor: ");
+	scanf("%d",&cod);
+
+	exec sql connect :oracleid;
+
+	exec sql select * into :autor from autor where codigo= :cod;
+
+	if(sqlca.sqlcode == 0){
+		printf("Nombre y Apellidos: %s %s\n",autor.nombre,autor.apellido);
+		if (autor.ano_nac != NULL) {
+    	printf("Año nacimiento: %d\n", autor.ano_nac);
+  	} else {
+    	printf("Año nacimiento: Desconocido\n");
+  	}
+		if (autor.ano_fall != NULL) {
+    	printf("Año fallecimiento: %d\n", autor.ano_fall);
+  	} else {
+    	printf("Año fallecimiento: Desconocido\n");
+  	}
+		printf("Codigo Nacionalidad: %d\n",autor.cod_nacion);
+	}else{
+		printf("No existe ningun autor con ese codigo\n");
+	}
+
+	exec sql work commit release;
+	return 0;
+}

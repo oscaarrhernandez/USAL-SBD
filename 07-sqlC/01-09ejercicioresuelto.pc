@@ -1,0 +1,42 @@
+/* Codificar una función utilizando SQL inmerso en C que permita añadir una nueva sucursal en la base de datos conociendo su código, dirección, población y provincia.
+El prototipo de la función será el siguiente:
+int insSucursal(char *codigo, char *dirección, char *problacion, char *provincia)
+Donde:
+	a. El primer parámetro identifica el código, el segundo la dirección de la nueva sucursal y así con los demás parámetros
+	b. Si la función acaba correctamente deben comprometerse todas sus modificaciones e indicarse que el alumno fue matriculado devolviendo un cero.
+	c. Si se viola alguna restricción de integridad o se realiza alguna operación contra la base de datos sin éxito, se deben anular todos los efectos realizados por la función y devolver el código de error apropiado.
+La función debe insertar valores nulos en aquellos atributos de la tabla para los que no se proporciona valor. */
+
+#include <stdio.h>
+#include <sqlca.h>
+
+int insSucursal(char *codigo, char *direccion, char *poblacion, char *provincia){
+ exec sql begin declare section;
+  int codigosucursal;
+  char direccionsql[51];
+  char poblacionsql[51];
+  char provinciasql[51];
+  char oracleid[]="\";
+exec sql end declare section;
+ 
+ codigosucursal=codigo;
+ direccionsql=&direccion;
+ poblacionsql=&poblacion;
+ provincia=&provincia;
+
+ exec sql connect :oracleid;
+ if(sqlca.sqlcode!=0)printf("Conexion\n");
+ exec sql insert into sucursal values(:codigosucursal,:direccionsql,:poblacionsql,provinciasql);
+ if(sqlca.sqlcode==0){
+  printf("Insertado con exito");
+  exec sql commit work release;
+ }else{
+	exec sql rollback;
+ }
+ return 0;
+}
+
+int main(){
+
+	return insSucursal(5,"Avenida del Terrorismo","PaisVasco","Pucela");
+}

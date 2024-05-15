@@ -10,33 +10,24 @@ La función debe insertar valores nulos en aquellos atributos de la tabla para l
 #include <stdio.h>
 #include <sqlca.h>
 
-int insSucursal(char *codigo, char *direccion, char *poblacion, char *provincia){
- exec sql begin declare section;
-  int codigosucursal;
-  char direccionsql[51];
-  char poblacionsql[51];
-  char provinciasql[51];
-  char oracleid[]="\";
-exec sql end declare section;
- 
- codigosucursal=codigo;
- direccionsql=&direccion;
- poblacionsql=&poblacion;
- provincia=&provincia;
-
- exec sql connect :oracleid;
- if(sqlca.sqlcode!=0)printf("Conexion\n");
- exec sql insert into sucursal values(:codigosucursal,:direccionsql,:poblacionsql,provinciasql);
- if(sqlca.sqlcode==0){
-  printf("Insertado con exito");
-  exec sql commit work release;
- }else{
-	exec sql rollback;
- }
- return 0;
-}
-
 int main(){
-
-	return insSucursal(5,"Avenida del Terrorismo","PaisVasco","Pucela");
+	exec sql begin declare section;
+		char oracleid[]="/";
+		int cod=33;
+		char direccion[]="Quiero Aprobar SBD";
+		char poblacion[]="Quiero Aprobar SBD";
+		char provincia[]="Quiero Aprobar SBD";
+	exec sql end declare section;
+	exec sql commit;
+	exec sql insert into sucursal (codigo,direccion,poblacion,provincia) values (:cod,:direccion,:poblacion,:provincia);
+	exec sql select * from sucursal where cod=33;
+	if(sqlca.sqlcode==0){
+		printf("Se insertó con exito la sucursal numero %d\n direccion:\t%s \n poblacion:\t%s \n provincia:\t%s\n",cod,direccion,poblacion,provincia);
+		exec sql commit work release;
+		return 0;
+	}else{
+		printf("Hubo un error, se deshace la insercción");
+		EXEC SQL ROLLBACK WORK RELEASE;
+		return -1;
+	}
 }

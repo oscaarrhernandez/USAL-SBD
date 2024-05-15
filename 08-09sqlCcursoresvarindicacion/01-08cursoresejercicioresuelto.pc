@@ -1,0 +1,10 @@
+/*Obtener las sucursales que tienen disponible para préstamo un determinado libro a partir de un patrón del nombre de dicho libro. Dado un título se debe mostrar su ISBN, Título completo y las sucursales donde está disponible con el número de ejemplares disponibles para préstamo. En la figura 1 se muestra la salida que debería obtenerse si el patrón introducido por el usuario hubiera sido “INFO” y suponiendo que sólo hay una carrera en la tabla carrereas cuyo nombre se corresponde con ese patrón. a. Si el patrón introducido por el usuario se corresponde con varios nombres de libros, el programa debe mostrar el ISBN, Título y disponibilidad en cada sucursal. b. Si el libro buscado no tiene ningún ejemplar disponible para préstamo en ninguna sucursal, se indicará mediante el mensaje oportuno al usuario. c. Si el patrón no se corresponde con ningún libro se mostrará un mensaje de aviso al usuario y si ocurre algún error en tiempo de ejecución debe mostrarse el código de error y el mensaje asociado devuelto por el sistema. NOTA: - 40100 es el código de error devuelto por el sistema si el resultado de una select contiene más de una fila*/
+
+#include <stdio.h>
+#include <sqlca.h>
+
+int main(){
+
+
+	return 0;
+}

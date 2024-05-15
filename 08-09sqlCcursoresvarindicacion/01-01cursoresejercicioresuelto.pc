@@ -1,12 +1,12 @@
 /*Obtener un listado de los lectores que tienen actualmente en préstamo el libro con ISBN 5024728 desglosado por sucursales y ordenado alfabéticamente dentro de cada sucursal*/
 
 #include <stdio.h>
-#include <sqlca.h>
+exec sql include sqlca;
 
 int main(){
 	exec sql begin declare section;
 		int codigosuc,isbn=5024728;
-		char nombre[21], ape_1[21], ape_2[21]igosuc != suc;
+		char nombre[21], ape_1[21], ape_2[21];
 		char oracleid[]="/";
 	exec sql end declare section;
 
@@ -24,7 +24,7 @@ int main(){
 	exec sql open micursor;
 	if(sqlca.sqlcode!=0)printf("OPEN: %d, %s", sqlca.sqlcode, sqlca.sqlerrm.sqlerrmc);
 
-	exec sql fetch micur into :codigosuc, :nombre, :ape_1, :ape_2;
+	exec sql fetch micursor into :codigosuc, :nombre, :ape_1, :ape_2;
 	if(sqlca.sqlcode!=0)printf("FETCH 1: %d, %s", sqlca.sqlcode, sqlca.sqlerrm.sqlerrmc);
 
 	while(sqlca.sqlcode==0){

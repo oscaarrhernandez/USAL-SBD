@@ -1,0 +1,53 @@
+/*Cuando se abre una nueva sucursal se dota inicialmente con el mismo fondo
+bibliotecario que cualquiera de las otras sucursales ya abiertas. Codificar una
+función utilizando SQL inmerso en C que permita asignar a dicha sucursal nueva y sin fondo con idéntico fondo bibliotecario que otra sucursal de las existentes indicada.
+El prototipo de la función será el siguiente:
+int iniciarfondo (int *sucnew, int *sucold)
+donde
+a. El parámetro sucnew identifica la sucursal a la que se desea dotar de
+fondo.
+b. El parámetro sucold la sucursal de la que se desea copiar el fondo.
+c. Si la función acaba correctamente deben comprometerse todas sus
+modificaciones e indicarse que la sucursal fue dotada con el fondo
+correctamente devolviendo un cero.
+d. Si se viola alguna restricción de integridad o se realiza alguna una
+operación contra la base de datos sin éxito, se deben anular todos los
+efectos realizados por la función y devolver el código de error
+apropiado.
+e. Si la sucursal no de la que se quiere igualar el fondo no existe o no
+posee fondo ninguno, se devolverá un código de error con valor –1
+que indique esta situación.
+La función debe insertar inicialmente el mismo número de disponibles
+que de ejemplares para cada título de la nueva sucursal creada.*/
+
+#include <stdio.h>
+#include <sqlca.h>
+
+int main(){
+	exec sql begin declare section;
+		int sucnew,sucold=5,nwnejem;
+		char nwisbn[15];
+		char oracleid[]="/";
+	exec sql end declare section;
+
+	exec sql declare micursor cursor for 
+   select isbn,num_ejemplares from dispone where cod_suc=:sucold;
+
+	printf("Numero de la nueva sucursal: ");
+	scanf("%d",&sucnew);
+	exec sql insert into sucursal (codigo,direccion,poblacion,provincia) values (:sucnew,"Libreros","Salamanca","Horno");
+
+	exec sql connect :oracleid;
+	exec sql open micursor;
+	
+	exec sql fetch micursor into :nwisbn,:nwnejem;
+	while(sqlca.sqlcode==0){
+		exec sql insert into dispone (cod_suc,isbn,num_ejemplares,num_disponibles) values (:sucnew,:nwisbn,:nwnejem,:nwnejem);
+	exec sql fetch micursor into :nwisbn,:nwnejem;
+
+	}
+
+	exec sql close micursor;
+	exec sql commit work release;
+	return 0;
+}

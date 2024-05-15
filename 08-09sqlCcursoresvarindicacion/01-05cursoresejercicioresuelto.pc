@@ -1,0 +1,36 @@
+/*Obtener el expediente de préstamos realizados de un lector cualquiera conociendo su código. En el expediente debe aparecer el código y nombre del lector y a continuación un listado de los libros tomados en préstamo por orden cronológico de la fecha en la que se inició dicho préstamo. El expediente mostrará el nombre de dichos libros, la fecha de devolución si ha sido devuelto y la sucursal en la que realizó dicho préstamo. Al final de dicho expediente se dará el número total de préstamos realizados y pendientes.*/
+/* CURSOR1: CODIGO APELIIDOS NOMBRE *//*lector*/
+/* CURSOR2: CODSUC ISBN FECHAINI FECHAFIN*//*prestamo codigolector*/
+/* CONTADOR PRESTAMOS CONTADOR NODEVUELTOS*/
+#include <stdio.h>
+#include <sqlca.h>
+
+int main(){
+	exec sql begin declare section;
+	int codigolector,numprestamos,numpresnodev;
+	char nom[20],ape1[25],ape2[25],fechaini[12],fechadev[12],isbn[15	];
+	int codsuc;
+	char oracleid[]="/";
+	exec sql end declare section;
+
+	printf("CodigoLector: ");
+	scanf("%d",&codigolector);
+	exec sql declare cursorprestamos cursor for select cod_suc,isbn,fecha_ini,fecha_dev from prestamo where cod_lector=:codigolector;
+	exec sql connect :oracleid;
+	exec sql open cursorprestamos;
+	exec sql select nombre,ape_1,ape_2 into :nom,:ape1,:ape2 from lector where codigo=:codigolector;
+	if(sqlca.sqlcode!=0){printf("%s",sqlca.sqlerrm.sqlerrmc);}
+
+	printf("CODIGO: %d\tNOMBRE: %s | %s | %s\n",codigolector,ape1,ape2,nom);
+	exec sql fetch cursorprestamos into :codsuc, :isbn, :fechaini, :fechadev;
+	printf("Sucursal:\tISBN:\tFechaIni:\tFechaDev:\n");
+	while(sqlca.sqlcode == 0 || sqlca.sqlcode == -1405){
+		printf("%d\t%s\t%s\t%s\n",codsuc,isbn,fechaini,fechadev);
+		exec sql fetch cursorprestamos into :codsuc, :isbn, :fechaini, :fechadev;
+	}
+	exec sql select count(*) into :numprestamos from prestamo where cod_lector = :codigolector;
+	exec sql select count(*) into :numpresnodev from prestamo where cod_lector = :codigolector AND fecha_dev is null;
+	printf("NUMERO TOTAL DE PRESTAMOS: %d\tPENDIENTES: %d\n",numprestamos,numpresnodev);
+	exec sql commit work release;
+	return 0;
+}

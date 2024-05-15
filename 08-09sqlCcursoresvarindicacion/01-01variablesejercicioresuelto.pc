@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <sqlca.h>
+
+int main(){
+	exec sql begin declare section;
+		char oracleid[] = "/";
+		int isbn = 5025664,suc;
+		char titulo[50],autores[50];
+		char nombre[30],ape1[30],ape2[30];
+		char fechaini[15],fechadev[15];
+		short isnull;
+	exec sql end declare section;
+	int sucact=0;
+	exec sql declare micursor cursor for 
+   select prestamo.cod_suc, lector.nombre,lector.ape_1,lector.ape_2,prestamo.fecha_ini,prestamo.fecha_dev from lector, prestamo where lector.codigo=prestamo.cod_lector AND isbn=:isbn;
+
+	exec sql connect :oracleid;
+
+	exec sql select titulo from libro where isbn=:isbn;
+
+	exec sql select nombre from autor, escribe where isbn=:isbn and cod_autor=codigo;
+	
+	exec sql open micursor;
+
+	printf("ISBN: %d\n",isbn);
+	printf("TITULO: %s\n",titulo);
+	printf("AUTOR(ES): %s\n",autores);
+	printf("SUCURSAL \t APELLIDOS Y NOMBRE \t FECHA_PRESTAMO \t FECHA_DEVOLUCION\n\n");
+	exec sql fetch micursor into :suc,:nombre,:ape1,:ape2,:fechaini,:fechadev:isnull;
+	while(sqlca.sqlcode==0){
+		if(sucact!=suc){
+			printf("\n%d\t",suc);
+			sucact=suc;
+		}
+		if(isnull==-1){
+			fecha_dev="PENDIENTE";
+		}
+		printf("\t%s\t%s\t%s\t%s\t%s\n",ape1,ape2,nombre,fechaini,fechadev);
+		}
+		exec sql fetch micursor into :suc,:nombre,:ape1,:ape2,:fechaini,:fechadev:isnull;
+	}
+	exec sql close micursor;
+	exec sql commit work release;
+	return 0;
+}

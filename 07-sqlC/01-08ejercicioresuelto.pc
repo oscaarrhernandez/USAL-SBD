@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <sqlca.h>
+#include <string.h>
 
 int main(){
 	exec sql begin declare section;
@@ -17,19 +18,24 @@ int main(){
 
 	exec sql connect :oracleid;
 
-	exec sql select codigo into :cod from lector where codigo=:cod;
+	exec sql select direccion,poblacion,provincia into :direccion,:poblacion,:provincia from lector where codigo=:cod;
+	if(sqlca.sqlcode!=0){
+		printf("No existe el lector\n");
+		return -1;
+	}
 
-	if(sql.sqlcode==0){
+	if(sqlca.sqlcode==0){
 		printf("Direccion: ");
 		scanf("%s",direccion);
+		getchar();
 		printf("Poblacion: ");
 		scanf("%s",poblacion);
+		getchar();
 		printf("Provincia: ");
 		scanf("%s",provincia);
+		getchar();
 		
 		exec sql update lector set direccion=:direccion,poblacion=:poblacion,provincia=:provincia where codigo=:cod;
-	}else{
-		printf("No existe lector con el codigo %d",cod);
 	}
 
 	exec sql commit work release;

@@ -15,7 +15,7 @@ int main(){
 
 	exec sql connect :oracleid;
 
-	exec sql select count(*) from autor where COD_NACION=select codigo from nacionalidad where nombre=:nacionalidad;
+	exec sql select count(*) into :num from autor where COD_NACION = (select nac.codigo from nacionalidad nac where nac.nombre=:nacionalidad);
 
 	if(sqlca.sqlcode == 0){
 		printf("El numero de autores de la nacionalidad %s es %d\n",nacionalidad,num);

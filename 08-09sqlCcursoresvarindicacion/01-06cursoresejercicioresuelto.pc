@@ -1,0 +1,35 @@
+/* Obtener un listado de los títulos distintos que tiene cada una de las sucursales que incluya el código de la sucursal, número de títulos distintos y número de ejemplares total de cada sucursal, ordenado por sucursales, como se observa en la siguiente figura */
+
+#include <stdio.h>
+#include <sqlca.h>
+
+int main(){
+	exec sql begin declare section;
+	int codsuc,titulostotales,numejemTotal;
+	char oracleid[]="/";
+	exec sql end declare section;
+
+exec sql declare micursor cursor for
+  select cod_suc, count(isbn), sum(num_ejemplares)
+  from dispone group by cod_suc
+  order by cod_suc;
+	if(sqlca.sqlcode!=0){printf("cursor %s",sqlca.sqlerrm.sqlerrmc);}
+
+	exec sql connect :oracleid;
+	if(sqlca.sqlcode!=0){printf("connect %s",sqlca.sqlerrm.sqlerrmc);}
+
+	exec sql open micursor;
+	if(sqlca.sqlcode!=0){printf("open %s",sqlca.sqlerrm.sqlerrmc);}
+
+	exec sql fetch micursor into :codsuc,:titulostotales,:numejemTotal;
+	if(sqlca.sqlcode!=0){printf("fetch %s",sqlca.sqlerrm.sqlerrmc);}
+	
+	while(sqlca.sqlcode == 0){
+		printf("%d\t%d\t%d\n",codsuc,titulostotales,numejemTotal);
+		exec sql fetch micursor into :codsuc,:titulostotales,:numejemTotal;
+	}
+
+	exec sql close micursor;
+	exec sql commit work release;
+	return 0;
+}

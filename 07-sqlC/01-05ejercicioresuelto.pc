@@ -6,13 +6,13 @@
 int main(){
 	exec sql begin declare section;
 		struct autor_{
-			int codigo,
-			char nombre[10],
-			char apellido[20],
-			int ano_nac,
-			int ano_fall,
-			int cod_nacion
-		};
+			int codigo;
+			char nombre[10];
+			char apellido[20];
+			int ano_nac;
+			int ano_fall;
+			int cod_nacion;
+		}autor;
 		int cod;
 		char oracleid[]="/";
 	exec sql end declare section;
@@ -41,6 +41,6 @@ int main(){
 		printf("No existe ningun autor con ese codigo\n");
 	}
 
-	exec sql work commit release;
+	exec sql commit work release;
 	return 0;
 }

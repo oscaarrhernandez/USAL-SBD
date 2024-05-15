@@ -1,0 +1,46 @@
+/* Obtener un listado de los libros más prestados en cada sucursal y para cada uno de ellos el nombre del título, ISBN y el número de préstamos contabilizados, ordenado por código de sucursal. */
+
+#include <stdio.h>
+#include <sqlca.h>
+
+int main(){
+	exec sql begin declare section;
+	int codsuc,num;
+	char titulo[40],isbn[15];
+	char oracleid[]="/";
+	exec sql end declare section;
+
+	exec sql declare micursor1 cursor for 
+   select cod_suc from prestamo order by 1;
+	exec sql declare micursor2 cursor for 
+   select libro.titulo, prestamo.isbn from libro, prestamo where prestamo.isbn=libro.isbn and cod_suc=:codsuc group by cod_suc,isbn order by 1;
+	exec sql declare micursor3 cursor for 
+   select count(*) from prestamo where isbn=:isbn and cod_suc=:codsuc;
+
+	exec sql connect :oracleid;
+	
+	exec sql open micursor1;
+	exec sql fetch micursor1 into :codsuc;
+	while(sqlca.sqlcode==0){
+		printf("Sucursal %d\n",codsuc);
+		exec sql open micursor2;
+		exec sql fetch micursor2 into :titulo,:isbn;
+		while(sqlca.sqlcode==0){
+			printf("TITULO\t\ISBN\tTOTALPRESTAMOS\n");
+			printf("%s\t%s\t",titulo,isbn);
+			exec sql open micursor3;
+			exec sql fetch micursor3 into :num;
+			while(sqlca.sqlcode==0){
+				printf("%d\n",num);
+				exec sql fetch micursor3 into :num;
+			}
+			exec sql close micursor3;
+			exec sql fetch micursor2 into :titulo,:isbn;
+		}
+		exec sql close micursor2;
+		exec sql fetch micursor1 into :codsuc;
+	}
+	exec sql close micursor1;
+	exec sql commit work release;
+	return 0;
+}

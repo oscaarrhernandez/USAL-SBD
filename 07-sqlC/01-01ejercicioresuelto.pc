@@ -5,32 +5,19 @@
 
 int main(){
 	exec sql begin declare section;
-		struct lector_
-		{
-			int CODIGO,
-			char NOMBRE[21],
-			char APE_1[21],
-			char APE_2[21],
-			char DIRECCION[50],
-			char POBLACION[30],
-			char PROVINCIA[30],
-			char FECHA_NAC[10]
-		}lector;
-		int cod, char oracle id[]="/";
+		char oracleid[]="/";
+		int cod;
+		char nombre[20],ape1[30],ape2[30];
 	exec sql end declare section;
-
-	printf("Introduce el codigo del lector: ");
-	scanf("%d",&cod);
 
 	exec sql connect :oracleid;
 
-	exec sql select * into :lector from LECTOR where codigo = :cod;
-	if(sqlca.sqlcode == 0){
-		printf("NOMBRE Y APELLIDOS: %s %s %s\n", lector.NOMBRE,lector.APE_1,lector.APE_2);
-	}
-	else printf("No exiset ningun lector con ese codigo %d\n", cod);
+	printf("Codigo Usuario: ");
+	scanf("%d",&cod);
+
+	exec sql select nombre,ape_1,ape_2 into :nombre,:ape1,:ape2 from lector where codigo=:cod;
+	printf("NOMBRE: %s\t APELLIDO1: %s\t APELLIDO2: %s\n",nombre,ape1,ape2);
 
 	exec sql commit work release;
-
 	return 0;
 }

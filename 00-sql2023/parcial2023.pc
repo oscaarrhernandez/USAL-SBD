@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <sqlca.h>
+
+int main(){
+	exec sql begin declare section;
+		char oracleid[]="/";
+	exec sql end declare section;
+	exec sql spool "ficherosalida";
+
+	exec sql connect :oracleid;
+
+	exec sql declare micursor cursor for select c.nombre,c.apellido,r.nombrerevista, count(s.logincliente) as numsubscripciones from cliente c, revista r, subscrito s where c.login=s.logincliente and r.idrevista=s.idrevista and GROUP BY s.logincliente HAVING COUNT(s.logincliente) = select s2.logincliente from subscrito where count(*) > 3 order by 1;
+
+
+	exec sql open micursor;
+
+	exec sql fetch micursor into :nombre,:apellido,:nombrerevista;
+	while(sqlca.sqlcode==0){
+		printf("NOMBRE: %s\tAPELLIDO: %s\tNOMBREREVISTA\n",nombre,apellido,nombrerevista);
+		exec sql fetch micursor into :nombre,:apellido,:nombrerevista;
+	}
+	exec sql commit work release;
+	exec sql spool off;
+	return 0;
+}

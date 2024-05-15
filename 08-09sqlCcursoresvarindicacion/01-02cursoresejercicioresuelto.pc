@@ -10,21 +10,21 @@ int main(){
 	exec sql end declare section;
 
 	exec sql declare micursor cursor for
-	select nac.nombre,nac.codigo,nombre,apellido,ano_nac, cod_nacion from autor, nacionalidad nac where cod_nacion=nac.codigo;
+	select nac.codigo,nac.nombre,a.nombre,apellido,ano_nac, cod_nacion from autor a, nacionalidad nac where cod_nacion=nac.codigo order by 2,1,4,3;
 
 	int nacionact=0;
 
 	exec sql connect :oracleid;
 
 	exec sql open micursor;
+	if(sqlca.sqlcode!=0)printf("OPEN: %d, %s", sqlca.sqlcode, sqlca.sqlerrm.sqlerrmc);
 
-	exec sql fetch micursor into :cod_nac, :nom_nac, :nombre, :apellidos, :ano_nac;
-
+	exec sql fetch micursor into :cod_nac, :nom_nac, :nombre, :apellido, :ano_nac;
+	if(sqlca.sqlcode!=0)printf("FETCH 1: %d, %s", sqlca.sqlcode, sqlca.sqlerrm.sqlerrmc);
 	while(sqlca.sqlcode == 0){
 		if(cod_nac != nacionact){
 			printf("NACIONALIDAD:\t %s\n\n",nom_nac);
 			nacionact = cod_nac;
-		
 			exec sql select count(*) into :contador from autor where cod_nacion=:cod_nac;
 			if(sqlca.sqlcode != 0 && sqlca.sqlcode != 100){
 				printf ("SELECT: %d, %s", sqlca.sqlcode, sqlca.sqlerrm.sqlerrmc);
@@ -32,13 +32,13 @@ int main(){
 			printf ("AUTORES:\t %d\n\n", contador);
 			printf ("%-20s %-20s %s\n", "APELLIDOS", "NOMBRE", "ANO NACIMIENTO");
 		}
-		printf ("%-20s %-20s %d\n", nombre, apellidos, ano_nac);
-		exec sql fetch micursor into :cod_nac, :nom_nac, :nombre, :apellidos, :ano_nac;
+		printf ("%-20s %-20s %d\n", nombre, apellido, ano_nac);
+		exec sql fetch micursor into :cod_nac, :nom_nac, :nombre, :apellido, :ano_nac;
 		if (sqlca.sqlcode!=0 && sqlca.sqlcode!=100) 
 			printf ("FETCH 2: %d, %s", sqlca.sqlcode, sqlca.sqlerrm.sqlerrmc);
 	}
 
-	exec sql close micursir;
+	exec sql close micursor;
 	exec sql commit work release;
 	return 0;
 }

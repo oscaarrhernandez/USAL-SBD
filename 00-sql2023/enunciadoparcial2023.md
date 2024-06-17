@@ -12,4 +12,4 @@ ARTICULO(*IDARTICULO*,IDREVISTA,FECHA,RESUMEN,ENLACETEXTO);
 			IDREVISTA FK SOBRE REVISTA
 ```
 
-Obtener un listado de las revistas subcritas por aquellos clientes que tengan tres o mas subcripciones.En el informe se presentará el nombre,apellido de cada cliente seguido del listado alfabético de los nombres de las revistas a las que está subscrito.
+EN INMERSO EN C, Obtener un listado de las revistas subcritas por aquellos clientes que tengan tres o mas subcripciones.En el informe se presentará el nombre,apellido de cada cliente seguido del listado alfabético de los nombres de las revistas a las que está subscrito.

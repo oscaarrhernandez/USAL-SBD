@@ -9,6 +9,9 @@
 [Sesión 3 Administración](#sesión-3-administración)
 [Sesión 4 Disparadores](#sesión-4-disparadores)
 [Sesión 5 PL/SQL](#sesión-5-plsql)
+[Sesión 7 SQL Inmerso C](#sesión-7-sql-inmerso-en-c)
+[Sesión 8 SQL Inmerso en C Cursores](#sesión-8-sql-inmerso-en-c-cursores)
+[Sesión 10 MongoDB](#sesión-10-mongodb)
 
 ## Sesión 1: Creación de informes
 
@@ -598,3 +601,4 @@ exec sql delete from sucursal where provincia = :nombreprov;
 
 ## Sesión 8: SQL Inmerso en C Cursores
 
+## Sesión 10: MongoDB
